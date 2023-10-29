@@ -1,7 +1,7 @@
 import { Icon } from '@iconify/react'
-import volcanoIcon from '@iconify/icons-mdi/volcano'
-import stormIcon from '@iconify/icons-mdi/storm'
-import wildfireIcon from '@iconify/icons-mdi/wildfire'
+import volcanoIcon from '@iconify/icons-mdi/volcano-outline'
+import stormIcon from '@iconify/icons-mdi/cyclone-outline'
+import wildfireIcon from '@iconify/icons-mdi/fire'
 
 const LocationVolcanoMarker = ({ lat, lng }) => {
   return (
