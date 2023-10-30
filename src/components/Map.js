@@ -6,119 +6,95 @@ import stormIcon from './storm.png'
 import wildfireIcon from './wildfire.png'
 
 const Map = ({ eventData, center, zoom }) => {
-  const [showVolcanoMarkers, setShowVolcanoMarkers] = useState(true)
-  const [showStormMarkers, setShowStormMarkers] = useState(true)
-  const [showWildfireMarkers, setShowWildfireMarkers] = useState(true)
+  const [showVolcanoMarkers, setShowVolcanoMarkers] = useState(false)
+  const [volcanoMarkers, setVolcanoMarkers] = useState([])
 
-  /*
-  const volcanoMarkers = eventData
-    .filter(eventData => showVolcanoMarkers && eventData.categories[0].id === "volcanoes")
-    .map(eventData => (
-      <LocationVolcanoMarker
-        key = { eventData.id }
-        lat = { eventData.geometry[0].coordinates[1] }
-        lng = { eventData.geometry[0].coordinates[0] }
-      />
-    ))
+  const [showStormMarkers, setShowStormMarkers] = useState(false)
+  const [stormMarkers, setStormMarkers] = useState([])
 
-  const stormMarkers = eventData
-    .filter(eventData => showStormMarkers && eventData.categories[0].id === "severeStorms")
-    .map(eventData => (
-      <LocationStormMarker
-        key = { eventData.id }
-        lat = { eventData.geometry[0].coordinates[1] }
-        lng = { eventData.geometry[0].coordinates[0] }
-      />
-    ))
-
-  const wildfireMarkers = eventData
-    .filter(eventData => showWildfireMarkers && eventData.categories[0].id === "wildfires")
-    .map(eventData => (
-      <LocationWildfireMarker
-        key = { eventData.id }
-        lat = { eventData.geometry[0].coordinates[1] }
-        lng = { eventData.geometry[0].coordinates[0] }
-      />
-    ))
-  */
+  const [showWildfireMarkers, setShowWildfireMarkers] = useState(false)
+  const [wildfireMarkers, setWildfireMarkers] = useState([])
 
   const [map, setMap] = useState(null)
 
   useEffect(() => {
     if (map) {
+      volcanoMarkers.forEach(marker => marker.setMap(null))
+      stormMarkers.forEach(marker => marker.setMap(null))
+      wildfireMarkers.forEach(marker => marker.setMap(null))
+
       if (showVolcanoMarkers) {
-        eventData
-          .filter(eventData => eventData.categories[0].id === "volcanoes")
-          .forEach(eventData => {
-            const marker = new window.google.maps.Marker({
+        const newVolcanoMarkers = eventData
+          .filter(eventData => eventData.categories[0].id === 'volcanoes')
+          .map(eventData => {
+            return new window.google.maps.Marker({
               position: {
                 lat: eventData.geometry[0].coordinates[1],
                 lng: eventData.geometry[0].coordinates[0],
               },
               map: map,
               icon: {
-                url: volcanoIcon, // Use the icon URL for volcanoes
-                scaledSize: new window.google.maps.Size(40, 40), // Adjust the size if needed
+                url: volcanoIcon,
+                scaledSize: new window.google.maps.Size(24, 24),
               },
             })
           })
-      }
-    }
-  }, [map, showVolcanoMarkers, eventData])
 
-  useEffect(() => {
-    if (map) {
+        setVolcanoMarkers(newVolcanoMarkers)
+      }
+
       if (showStormMarkers) {
-        eventData
-          .filter(eventData => eventData.categories[0].id === "severeStorms")
-          .forEach(eventData => {
-            const marker = new window.google.maps.Marker({
+        const newStormMarkers = eventData
+          .filter(eventData => eventData.categories[0].id === 'severeStorms')
+          .map(eventData => {
+            return new window.google.maps.Marker({
               position: {
                 lat: eventData.geometry[0].coordinates[1],
                 lng: eventData.geometry[0].coordinates[0],
               },
               map: map,
               icon: {
-                url: stormIcon, // Use the icon URL for volcanoes
-                scaledSize: new window.google.maps.Size(40, 40), // Adjust the size if needed
+                url: stormIcon,
+                scaledSize: new window.google.maps.Size(24, 24),
               },
             })
           })
-      }
-    }
-  }, [map, showStormMarkers, eventData])
 
-  useEffect(() => {
-    if (map) {
+        setStormMarkers(newStormMarkers)
+      }
+
       if (showWildfireMarkers) {
-        eventData
-          .filter(eventData => eventData.categories[0].id === "wildfires")
-          .forEach(eventData => {
-            const marker = new window.google.maps.Marker({
+        const newWildfireMarkers = eventData
+          .filter(eventData => eventData.categories[0].id === 'wildfires')
+          .map(eventData => {
+            return new window.google.maps.Marker({
               position: {
                 lat: eventData.geometry[0].coordinates[1],
                 lng: eventData.geometry[0].coordinates[0],
               },
               map: map,
               icon: {
-                url: wildfireIcon, // Use the icon URL for volcanoes
-                scaledSize: new window.google.maps.Size(40, 40), // Adjust the size if needed
+                url: wildfireIcon,
+                scaledSize: new window.google.maps.Size(24, 24),
               },
             })
           })
+
+        setWildfireMarkers(newWildfireMarkers)
       }
     }
-  }, [map, showWildfireMarkers, eventData])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [map, eventData, showVolcanoMarkers, showStormMarkers, showWildfireMarkers])
 
   return (
-    <div className = "map">
-      <button onClick = {() => setShowVolcanoMarkers(!showVolcanoMarkers)}>Toggle Volcanoes</button>
-      <button onClick = {() => setShowStormMarkers(!showStormMarkers)}>Toggle Storms</button>
-      <button onClick = {() => setShowWildfireMarkers(!showWildfireMarkers)}>Toggle Wildfires</button>
+    <div className="map">
+      <button onClick={() => setShowVolcanoMarkers(!showVolcanoMarkers)}>Toggle Volcanoes</button>
+      <button onClick={() => setShowStormMarkers(!showStormMarkers)}>Toggle Storms</button>
+      <button onClick={() => setShowWildfireMarkers(!showWildfireMarkers)}>Toggle Wildfires</button>
       <GoogleMapReact
-        bootstrapURLKeys = {{ key: 'AIzaSyDymZ1ilLgyS4CpP4psnkpvQ5ZziEJSLjU'}}
-        defaultCenter = {center}
-        defaultZoom = {zoom}
+        bootstrapURLKeys={{ key: 'AIzaSyDymZ1ilLgyS4CpP4psnkpvQ5ZziEJSLjU' }}
+        defaultCenter={center}
+        defaultZoom={zoom}
         onGoogleApiLoaded={({ map }) => setMap(map)}
       >
       </GoogleMapReact>
@@ -129,9 +105,9 @@ const Map = ({ eventData, center, zoom }) => {
 Map.defaultProps = {
   center: {
     lat: 0,
-    lng: 0 
+    lng: 0,
   },
-  zoom: 0
+  zoom: 0,
 }
 
 export default Map
