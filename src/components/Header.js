@@ -5,10 +5,10 @@ const Header = () => {
         <div class = "container text-center">
             <div class = "row align-items-start">
                 <div class = "col">
-                Volcano Tracker (Powered by NASA) | Group 3
+                Natural Disaster Tracker (Powered by NASA and Google) | Group 3
                 </div>
                 <div class = "col">
-                Philip Nguyen | Ai Kha Phi Tran
+                Philip Nguyen | Ai Tran
                 </div>
             </div>
         </div>
