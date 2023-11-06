@@ -4,6 +4,7 @@ body, html {
   height: 100%;
   overflow: hidden;
   font-family: Arial, Helvetica, sans-serif;
+
 }
   
 .map {
@@ -26,4 +27,42 @@ body, html {
 }
 .btn-3 {
   background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+}
+.btn-vol {
+  padding: 15px 32px;
+  margin: 20px;
+  background-color: #37D7E8;
+  border: none;
+  user-select: none;
+  cursor: pointer;
+  font-size: 10px;
+  text-transform: uppercase;
+  transition: all 0.5s linear;
+  color: #fff;
+}
+
+.btn-vol:hover {
+  background-color:#002EAD;
+  border-radius: 0;
+  scale: 1.1;
+}
+
+.btn-vol::after{
+  content: '';
+  background: #0ebac5;
+  width: 0;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  z-index: -1;    
+}
+
+.btn-vol:hover::after {
+  width: 100%;
+}
+
+
+h1{
+  margin: 5px;
 }
