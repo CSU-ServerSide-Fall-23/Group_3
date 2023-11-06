@@ -4,7 +4,7 @@ const Loader = () => {
   return (
     <div className = "loader">
         <img src = {spinner} alt = "Loading icon"/>
-        <h1> loading...</h1>
+        <h1>Loading...</h1>
     </div>
   )
 }
