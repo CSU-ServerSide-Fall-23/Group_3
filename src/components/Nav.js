@@ -16,8 +16,11 @@ const Nav = () => {
                 <li class = "nav-item">
                     <a class = "nav-link active fw-bold" href = "https://api.nasa.gov/">NASA APIs</a>
                 </li>
+                <li class = "nav-item">
+                    <a class = "nav-link active fw-bold" href = "https://eonet.gsfc.nasa.gov/docs/v3">EONET</a>
+                </li>
             </ul>
-            <h4>Hurricanes and Wildfires Tracker</h4>
+            <h4>Natural disaster tracker</h4>
             </div>
         </div>
         </nav>

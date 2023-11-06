@@ -4,8 +4,10 @@ import GoogleMapReact from 'google-map-react'
 import volcanoIcon from './volcano.png'
 import stormIcon from './storm.png'
 import wildfireIcon from './wildfire.png'
+import LocationInfo from './LocationInfo'
 
 const Map = ({ eventData, center, zoom }) => {
+  const [locationInfo, setLocationInfo] = useState([])
   const [showVolcanoMarkers, setShowVolcanoMarkers] = useState(false)
   const [volcanoMarkers, setVolcanoMarkers] = useState([])
 
@@ -41,6 +43,7 @@ const Map = ({ eventData, center, zoom }) => {
           })
 
         setVolcanoMarkers(newVolcanoMarkers)
+        setLocationInfo({ id: eventData.id, title: eventData.title })
       }
 
       if (showStormMarkers) {
@@ -61,6 +64,7 @@ const Map = ({ eventData, center, zoom }) => {
           })
 
         setStormMarkers(newStormMarkers)
+        setLocationInfo({ id: eventData.id, title: eventData.title })
       }
 
       if (showWildfireMarkers) {
@@ -81,6 +85,7 @@ const Map = ({ eventData, center, zoom }) => {
           })
 
         setWildfireMarkers(newWildfireMarkers)
+        setLocationInfo({ id: eventData.id, title: eventData.title })
       }
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -88,16 +93,18 @@ const Map = ({ eventData, center, zoom }) => {
 
   return (
     <div className="map">
-      <button onClick={() => setShowVolcanoMarkers(!showVolcanoMarkers)}>Toggle Volcanoes</button>
-      <button onClick={() => setShowStormMarkers(!showStormMarkers)}>Toggle Storms</button>
-      <button onClick={() => setShowWildfireMarkers(!showWildfireMarkers)}>Toggle Wildfires</button>
-      <GoogleMapReact
+      <button className='btn-vol ' onClick={() => setShowVolcanoMarkers(!showVolcanoMarkers)}>Toggle Volcanoes</button>
+      <button className='btn-vol' onClick={() => setShowStormMarkers(!showStormMarkers)}>Toggle Storms</button>
+      <button className='btn-vol' onClick={() => setShowWildfireMarkers(!showWildfireMarkers)}>Toggle Wildfires</button>
+     <GoogleMapReact
         bootstrapURLKeys={{ key: 'AIzaSyDymZ1ilLgyS4CpP4psnkpvQ5ZziEJSLjU' }}
         defaultCenter={center}
         defaultZoom={zoom}
         onGoogleApiLoaded={({ map }) => setMap(map)}
       >
       </GoogleMapReact>
+      {locationInfo && <LocationInfo info={locationInfo} />}
+
     </div>
   )
 }

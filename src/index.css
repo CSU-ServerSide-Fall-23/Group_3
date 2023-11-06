@@ -1,6 +1,6 @@
 body, html {
-  margin: 0;
-  padding: 0;
+  margin: 02px;
+  padding: 03px;
   height: 100%;
   overflow: hidden;
   font-family: Arial, Helvetica, sans-serif;
@@ -9,7 +9,7 @@ body, html {
   
 .map {
   width: 100vw;
-  height: 100vh;
+  height: 70vh;
   position: relative;
 }
 
@@ -29,6 +29,7 @@ body, html {
   background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
 }
 .btn-vol {
+  text-align: left;
   padding: 15px 32px;
   margin: 20px;
   background-color: #37D7E8;
@@ -65,4 +66,25 @@ body, html {
 
 h1{
   margin: 5px;
+}
+.location-info {
+  position: absolute;
+  top: 80px;
+  right: 50px;
+  width: 400px;
+  min-height: 200px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.location-info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.location-info li {
+  padding: 5px 0;
 }
