@@ -25,7 +25,6 @@ function App() {
     <div>
       <Header/> 
       <Nav/>
-      
       { !loading ? <Map eventData = {eventData} /> : <Loader/>}
     </div>
   )
