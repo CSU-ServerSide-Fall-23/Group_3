@@ -8,6 +8,7 @@ import LocationInfo from './LocationInfo'
 
 const Map = ({ eventData, center, zoom }) => {
   const [locationInfo, setLocationInfo] = useState([])
+  
   const [showVolcanoMarkers, setShowVolcanoMarkers] = useState(false)
   const [volcanoMarkers, setVolcanoMarkers] = useState([])
 
