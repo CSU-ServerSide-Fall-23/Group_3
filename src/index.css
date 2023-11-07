@@ -1,16 +1,20 @@
 body, html {
-  margin: 02px;
-  padding: 03px;
+  margin: 0px;
+  padding: 4px;
   height: 100%;
   overflow: hidden;
   font-family: Arial, Helvetica, sans-serif;
 
 }
+
+.planetIcon {
+  margin: 15px;
+}
   
 .map {
-  width: 100vw;
-  height: 70vh;
-  position: relative;
+  width: 99vw;
+  height: 80vh;
+  position: center;
 }
 
 .location-icon{
@@ -25,9 +29,11 @@ body, html {
   justify-content: center;
   min-height: 100vh;
 }
+
 .btn-3 {
   background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
 }
+
 .btn-vol {
   text-align: left;
   padding: 15px 32px;
@@ -55,7 +61,6 @@ body, html {
   height: 100%;
   position: absolute;
   inset: 0;
-  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   z-index: -1;    
 }
 
@@ -63,20 +68,20 @@ body, html {
   width: 100%;
 }
 
-
 h1{
   margin: 5px;
 }
+
 .location-info {
   position: absolute;
-  top: 80px;
-  right: 50px;
-  width: 400px;
+  top: 250px;
+  right: 20px;
+  width: 225px;
   min-height: 200px;
-  padding: 20px;
+  padding: 15px;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 10px;
-  font-size: 18px;
+  font-size: 15px;
   color: #fff;
 }
 
