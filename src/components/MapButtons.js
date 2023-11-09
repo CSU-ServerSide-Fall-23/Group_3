@@ -1,5 +1,3 @@
-
-
 function MapButtons({ toggleVolcanoMarkers, toggleStormMarkers, toggleWildfireMarkers }) 
 {
   return (
