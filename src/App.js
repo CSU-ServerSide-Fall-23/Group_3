@@ -4,8 +4,8 @@ import Loader from './components/Loader'
 import Nav from './components/Nav'
 import Header from './components/Header'
 
-
 function App() {
+
   const [eventData, setEventData] = useState([])
   const [loading, setLoading] = useState(false)
 
@@ -14,7 +14,6 @@ function App() {
       setLoading (true)
       const res = await fetch('https://eonet.gsfc.nasa.gov/api/v3/events')
       const {events} = await res.json()
-
       setEventData(events)
       setLoading(false)
     }
@@ -25,7 +24,7 @@ function App() {
     <div>
       <Header/> 
       <Nav/>
-      { !loading ? <Map eventData = {eventData} /> : <Loader/>}
+      { !loading ? <Map eventData = {eventData} /> : <Loader/> }
     </div>
   )
 }
