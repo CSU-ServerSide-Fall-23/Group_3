@@ -3,7 +3,10 @@ import {useState, useEffect} from 'react'
 import Loader from './components/Loader'
 import Nav from './components/Nav'
 import Header from './components/Header'
-
+import { QuestionCircleOutlined } from '@ant-design/icons';
+import { FloatButton } from 'antd';
+import React from 'react';
+import volcano from '@iconify/icons-mdi/volcano'
 function App() {
 
   const [eventData, setEventData] = useState([])
@@ -25,6 +28,11 @@ function App() {
       <Header/> 
       <Nav/>
       { !loading ? <Map eventData = {eventData} /> : <Loader/> }
+      <FloatButton.Group shape="circle" style={{ left: 24 }}>
+      <FloatButton icon={<QuestionCircleOutlined />} />
+      <FloatButton />
+      <FloatButton.BackTop visibilityHeight={0} />
+    </FloatButton.Group>
     </div>
   )
 }
