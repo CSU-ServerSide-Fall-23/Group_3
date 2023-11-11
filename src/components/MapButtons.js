@@ -1,17 +1,20 @@
+import { FloatButton } from 'antd';
+import React from 'react';
+import { MdVolcano } from "react-icons/md";
+import { MdOutlineStorm } from "react-icons/md";
+import { MdLocalFireDepartment } from "react-icons/md";
+
+
 function MapButtons({ toggleVolcanoMarkers, toggleStormMarkers, toggleWildfireMarkers }) 
 {
   return (
-    <div className = "map-buttons">
-      <button className = "btn-vol" onClick = { toggleVolcanoMarkers }>
-        Toggle Volcanoes
-      </button>
-      <button className = "btn-vol" onClick = { toggleStormMarkers }>
-        Toggle Storms
-      </button>
-      <button className = "btn-vol" onClick = { toggleWildfireMarkers} >
-        Toggle Wildfires
-      </button>
-    </div>
+    <FloatButton.Group shape="circle" style={{ left: 24 }}>
+    <FloatButton icon={<MdVolcano onClick = { toggleVolcanoMarkers }/>} tooltip='Volcanoes'/>
+    <FloatButton icon={<MdOutlineStorm onClick = { toggleStormMarkers }/>}tooltip='Storms'/>
+    <FloatButton icon={<MdLocalFireDepartment onClick = { toggleWildfireMarkers }/>}tooltip='Wildfires'/>
+
+  </FloatButton.Group>
+
   )
 }
 
