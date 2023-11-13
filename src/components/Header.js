@@ -1,13 +1,43 @@
+import React, { useState, useEffect } from 'react'
+
 const Header = () => {
+  const [headerText, setHeaderText] = useState("Natural Disaster Tracker (Powered by NASA and Google) | Group 3")
+  const [showSecondColumn, setShowSecondColumn] = useState(true)
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setHeaderText("Natural Disaster App")
+        setShowSecondColumn(false)
+      } else {
+        setHeaderText("Natural Disaster Tracker (Powered by NASA and Google) | Group 3")
+        setShowSecondColumn(true)
+      }
+    }
+
+    // Set initial header text and second column visibility based on window size
+    handleResize()
+
+    // Add event listener for window resize
+    window.addEventListener('resize', handleResize)
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
   return (
-    <div class = "container text-center">
-      <div class = "row align-items-start">
-        <div class = "col">
-          Natural Disaster Tracker (Powered by NASA and Google) | Group 3
+    <div className="container text-center">
+      <div className="row align-items-start">
+        <div className="col">
+          {headerText}
         </div>
-        <div class = "col">
-          Philip Nguyen | Ai Tran
-        </div>
+        {showSecondColumn && (
+          <div className="col">
+            Philip Nguyen | Ai Tran
+          </div>
+        )}
       </div>
     </div>
   )

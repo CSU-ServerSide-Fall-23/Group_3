@@ -4,7 +4,11 @@ body, html {
   height: 100%;
   overflow: hidden;
   font-family: Arial, Helvetica, sans-serif;
+  background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+}
 
+.nnn {
+  background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
 }
 
 .planetIcon {
