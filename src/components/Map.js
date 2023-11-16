@@ -91,7 +91,7 @@ const Map = ({ eventData, center, zoom }) => {
         toggleWildfireMarkers = {() => setShowWildfireMarkers(!showWildfireMarkers)}
       />
       <GoogleMapReact
-        bootstrapURLKeys = {{ key: 'AIzaSyDymZ1ilLgyS4CpP4psnkpvQ5ZziEJSLjU' }}
+        bootstrapURLKeys = {{ key: 'key' }}
         defaultCenter = {center}
         defaultZoom = {zoom}
         onGoogleApiLoaded = {({ map }) => setMap(map)}
