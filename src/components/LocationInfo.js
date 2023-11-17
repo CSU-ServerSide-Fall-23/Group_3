@@ -1,16 +1,22 @@
 const LocationInfo = ({ info }) => {
   return (
-    <div className="location-info">
+    <div className = "location-info">
       <h2>Event Information</h2>
       <ul>
         <li>
-          ID: <strong>{ info.id }</strong>
+          TYPE: <strong>{ info.type }</strong>
         </li>
         <li>
-          TITLE: <strong>{ info.title }</strong>
+          NAME: <strong>{ info.title }</strong>
         </li>
         <li>
-          LINK: <strong>{ info.link }</strong>
+          EONET API ID: <strong>{ info.id }</strong>
+        </li>
+        <li>
+          CORDINATES: <strong>{ info.coordinates }</strong>
+        </li>
+        <li>
+          ADDITIONAL INFORMATION: <strong><a href = {info.link} target = "_blank" rel = "noopener noreferrer">{info.link}</a></strong>
         </li>
       </ul>
     </div>

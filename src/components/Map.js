@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react'
 import GoogleMapReact from 'google-map-react'
 import LocationInfo from './LocationInfo'
 import MapButtons from './MapButtons'
-import volcanoIcon from './volcano.png'
-import stormIcon from './storm.png'
-import wildfireIcon from './wildfire.png'
-import placeholderIcon from './placeholder.png'
+import placeholderIcon from '../media/placeholder.png'
+import stormIcon from '../media/storm.png'
+import volcanoIcon from '../media/volcano.png'
+import wildfireIcon from '../media/wildfire.png'
 
 const Map = ({ eventData, center, zoom }) => {
 
@@ -45,7 +45,13 @@ const Map = ({ eventData, center, zoom }) => {
     })
 
     marker.addListener('click', () => {
-      setLocationInfo({ id: event.id, title: event.title, link: event.link })
+      setLocationInfo({ 
+        coordinates: event.geometry[0].coordinates[0] + ", "+ event.geometry[0].coordinates[1],
+        id: event.id, 
+        link: event.sources[0].url, 
+        title: event.title, 
+        type: event.categories[0].title
+      })
     })
 
     return marker
@@ -91,11 +97,12 @@ const Map = ({ eventData, center, zoom }) => {
         toggleWildfireMarkers = {() => setShowWildfireMarkers(!showWildfireMarkers)}
       />
       <GoogleMapReact
-        bootstrapURLKeys = {{ key: 'key' }}
+        bootstrapURLKeys = {{ key: 'AIzaSyDymZ1ilLgyS4CpP4psnkpvQ5ZziEJSLjU' }}
         defaultCenter = {center}
         defaultZoom = {zoom}
         onGoogleApiLoaded = {({ map }) => setMap(map)}
-      />
+      >
+      </GoogleMapReact>
       {locationInfo && <LocationInfo info = {locationInfo} />}
     </div>
   )

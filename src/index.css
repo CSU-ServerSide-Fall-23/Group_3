@@ -1,92 +1,46 @@
+/*
+index.html
+*/
+
 body, html {
-  margin: 0px;
-  padding: 4px;
+  background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+  font-family: Arial, Helvetica, sans-serif;
   height: 100%;
   overflow: hidden;
-  font-family: Arial, Helvetica, sans-serif;
-  background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+  padding: 4px;
 }
 
-.nnn {
-  background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
-}
-
-.planetIcon {
-  margin: 15px;
-}
-  
-.map {
-  width: 99vw;
-  height: 88vh;
-  position: center;
-}
-
-.location-icon{
-  font-size: 1.5rem;
-  color: red;
-}
+/*
+Loader.js
+*/
 
 .loader {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   min-height: 100vh;
 }
 
-.btn-3 {
-  background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
-}
-
-.btn-vol {
-  text-align: left;
-  padding: 15px 32px;
-  margin: 20px;
-  background-color: #37D7E8;
-  border: none;
-  user-select: none;
-  cursor: pointer;
-  font-size: 10px;
-  text-transform: uppercase;
-  transition: all 0.5s linear;
-  color: #fff;
-}
-
-.btn-vol:hover {
-  background-color:#002EAD;
-  border-radius: 0;
-  scale: 1.1;
-}
-
-.btn-vol::after{
-  content: '';
-  background: #0ebac5;
-  width: 0;
-  height: 100%;
-  position: absolute;
-  inset: 0;
-  z-index: -1;    
-}
-
-.btn-vol:hover::after {
-  width: 100%;
-}
-
-h1{
-  margin: 5px;
-}
+/*
+LocationInfo.js
+*/
 
 .location-info {
-  position: absolute;
-  top: 250px;
-  right: 20px;
-  width: 225px;
-  min-height: 200px;
-  padding: 15px;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 10px;
-  font-size: 15px;
   color: #fff;
+  font-size: 15px;
+  min-height: 200px;
+  padding: 15px;
+  position: absolute;
+  right: 19px;
+  top: 250px;
+  width: 300px;
+}
+
+.location-info li {
+  padding: 5px 0;
 }
 
 .location-info ul {
@@ -94,6 +48,21 @@ h1{
   padding: 0;
 }
 
-.location-info li {
-  padding: 5px 0;
+/*
+Map.js
+*/
+
+.map {
+  height: 93vh;
+  margin: auto;
+  text-align: center;
+  width: 99vw;
+}
+
+/*
+Nav.js
+*/
+
+.nav-background {
+  background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
 }

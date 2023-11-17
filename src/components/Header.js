@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 const Header = () => {
   const [headerText, setHeaderText] = useState("Natural Disaster Tracker (Powered by NASA and Google) | Group 3")
@@ -27,14 +27,15 @@ const Header = () => {
     }
   }, [])
 
+  //align-items-start is not bootstrap
   return (
-    <div className="container text-center">
-      <div className="row align-items-start">
-        <div className="col">
+    <div className = "container text-center">
+      <div className = "row">
+        <div className = "col">
           {headerText}
         </div>
         {showSecondColumn && (
-          <div className="col">
+          <div className = "col">
             Philip Nguyen | Ai Tran
           </div>
         )}

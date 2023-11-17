@@ -1,4 +1,4 @@
-import spinner from './loading.gif'
+import spinner from '../media/loading.gif'
 
 const Loader = () => {
   return (

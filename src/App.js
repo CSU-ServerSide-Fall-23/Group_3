@@ -1,8 +1,7 @@
-import Map from './components/Map'
 import {useState, useEffect} from 'react'
 import Loader from './components/Loader'
+import Map from './components/Map'
 import Nav from './components/Nav'
-import Header from './components/Header'
 
 function App() {
 
@@ -23,7 +22,6 @@ function App() {
 
   return (
     <div>
-      <Header/> 
       <Nav/>
       { !loading ? <Map eventData = {eventData} /> : <Loader/> }
     </div>
