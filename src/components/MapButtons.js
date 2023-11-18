@@ -9,9 +9,9 @@ function MapButtons({ toggleVolcanoMarkers, toggleStormMarkers, toggleWildfireMa
 {
   return (
     <FloatButton.Group shape = "square" style = {{ right: 19, bottom: 200 }}>
-    <FloatButton icon = {<MdVolcano />}onClick = { toggleVolcanoMarkers } tooltip='Volcanoes'/>
-    <FloatButton icon = {<MdOutlineStorm />}onClick = { toggleStormMarkers } tooltip='Storms'/>
-    <FloatButton icon = {<MdLocalFireDepartment />}onClick = { toggleWildfireMarkers } tooltip='Wildfires'/>
+    <FloatButton icon = { <MdVolcano /> }onClick = { toggleVolcanoMarkers } tooltip = 'Volcanoes'/>
+    <FloatButton icon = { <MdOutlineStorm /> }onClick = { toggleStormMarkers } tooltip = 'Storms'/>
+    <FloatButton icon = { <MdLocalFireDepartment /> }onClick = { toggleWildfireMarkers } tooltip = 'Wildfires'/>
     </FloatButton.Group>
   )
 }

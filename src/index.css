@@ -28,16 +28,15 @@ LocationInfo.js
 
 .location-info {
   background: linear-gradient(rgba(128, 255, 219, 0.5), rgba(83, 144, 217, 0.5));
-  text-shadow: 1px 1px 2px black;;
-
   border-radius: 10px;
-  text-align: left;
   color: #fff;
   font-size: 15px;
   min-height: 200px;
   padding: 15px;
   position: absolute;
   right: 19px;
+  text-align: left;
+  text-shadow: 1px 1px 2px black;;
   top: 250px;
   width: 300px;
 }
@@ -45,14 +44,12 @@ LocationInfo.js
 .location-info li {
   padding: 5px 0;
   text-shadow: black;
-
 }
 
 .location-info ul {
   list-style-type: none;
-  text-shadow: black;
-
   padding: 0;
+  text-shadow: black;
 }
 
 /*

@@ -15,19 +15,15 @@ const Header = () => {
       }
     }
 
-    // Set initial header text and second column visibility based on window size
     handleResize()
 
-    // Add event listener for window resize
     window.addEventListener('resize', handleResize)
 
-    // Cleanup event listener on component unmount
     return () => {
       window.removeEventListener('resize', handleResize)
     }
   }, [])
 
-  //align-items-start is not bootstrap
   return (
     <div className = "container text-center">
       <div className = "row">
