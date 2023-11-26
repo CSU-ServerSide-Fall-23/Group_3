@@ -6,8 +6,8 @@ const Nav = () => {
           className = "planetIcon"
           src = "https://media.tenor.com/LYftKBBe2csAAAAi/earth-planet.gif"
           alt = "planet earth spinning gif"
-          height = {30}
-          width = {30}
+          height = { 30 }
+          width = { 30 }
         />
         <button
           className = "navbar-toggler"
