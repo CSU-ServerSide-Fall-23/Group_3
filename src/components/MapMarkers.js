@@ -17,7 +17,7 @@ const MapMarkers = ({ map, eventData, showVolcanoMarkers, showStormMarkers, show
     const magnitudeValue = event.geometry[0].magnitudeValue
     let icon
 
-    if ((category === 'severeStorms') && magnitudeValue < 64) {
+    if ((category === 'severeStorms') && magnitudeValue < 69) {
       icon = storm2Icon
     } else {
       icon = icons[category]
