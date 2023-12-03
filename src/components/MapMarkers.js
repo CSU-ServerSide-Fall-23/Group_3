@@ -89,7 +89,10 @@ const MapMarkers = ({ map, eventData, showVolcanoMarkers, showStormMarkers, show
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [map, eventData, showVolcanoMarkers, showStormMarkers, showWildfireMarkers, setLocationInfo])
 
-  return null
+  return (
+    <div className="map-markers">
+    </div>
+  )
 }
 
 export default MapMarkers
