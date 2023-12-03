@@ -27,7 +27,7 @@ LocationInfo.js
 */
 
 .location-info {
-  background: linear-gradient(rgba(128, 255, 219, 0.5), rgba(83, 144, 217, 0.5));
+  background: linear-gradient(rgba(128, 255, 219), rgba(83, 144, 217));
   border-radius: 10px;
   color: #fff;
   font-size: 15px;
