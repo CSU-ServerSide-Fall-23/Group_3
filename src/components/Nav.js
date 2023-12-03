@@ -23,7 +23,7 @@ const Nav = () => {
         <div className = "collapse navbar-collapse" id = "navbarNav">
           <ul className = "navbar-nav">
             <li className = "nav-item">
-              <a className = "nav-link active fw-bold" href = "http://localhost:3000/">
+              <a className = "nav-link active fw-bold" href = "https://wondrous-crepe-3dfb3a.netlify.app/">
                 Natural Disaster Tracker
               </a>
             </li>
