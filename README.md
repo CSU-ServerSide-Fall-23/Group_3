@@ -13,11 +13,9 @@ Download the project, and make sure to open the [terminal](https://code.visualst
 
 ## Google Map API
 
-You have to create an API key from Google to be able to use the map.
-
 [Google Map API](https://mapsplatform.google.com/)
 
-After getting your API key, open Map.js located in src/components, head into the GoogleMapAPI section and paste your API key in between the quotes.
+A key is required if you want to run the project locally or on a different site. Create one with the link above. After getting your API key, open Map.js located in src/components, head into the GoogleMapAPI section and paste your API key in between the quotes.
 
 Open the terminal and type yarn start to start the react app.
 
@@ -27,7 +25,7 @@ Open the terminal and type yarn start to start the react app.
 
 EONET API is used in the project to get the location, names, and additional information for each disaster marker. 
 
-To get data from the API, this [page](https://eonet.gsfc.nasa.gov/api/v3/events) contains the information, the data can be fetch and then used.
+To get data from the API, this [page](https://eonet.gsfc.nasa.gov/api/v3/events) contains the information, the data can be fetch.
 
 ## TESTING
 
