@@ -33,6 +33,7 @@ const MapMarkers = ({ map, eventData, showVolcanoMarkers, showStormMarkers, show
         url: icon,
         scaledSize: new window.google.maps.Size(24, 24),
       },
+      className: 'markers',
     })
 
     const title = event.title
