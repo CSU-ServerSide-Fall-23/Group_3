@@ -21,6 +21,16 @@ After getting your API key, open Map.js located in src/components, head into the
 
 Open the terminal and type yarn start to start the react app.
 
-## Testing
+## EONET API
 
+[EONET API](https://eonet.gsfc.nasa.gov/)
 
+EONET API is used in the project to get the location, names, and additional information for each disaster marker. 
+
+To get data from the API, this [page](https://eonet.gsfc.nasa.gov/api/v3/events) contains the information, the data can be fetch and then used.
+
+## TESTING
+
+[Cypress](https://www.cypress.io/how-it-works) is used for testing the project.
+
+To run the test, first ensure that you have Cypress installed. After installation, press ctrl+shift+b and type cypress and select Run Cypress in UI Mode. The Cypress should begin.
