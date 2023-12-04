@@ -1,6 +1,6 @@
 # Natural Disaster Tracker
 
-[Render Website Link](wondrous-crepe-3dfb3a.netlify.app/)
+[Render Website Link](https://wondrous-crepe-3dfb3a.netlify.app/)
 
 ## Group Members
 Philip Nguyen, Ai Tran
